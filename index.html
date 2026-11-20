@@ -209,9 +209,9 @@
         background:
           linear-gradient(
             135deg,
-            rgba(1, 41, 63, 0.92),
+            rgba(63, 60, 1, 0.92),
             rgba(2, 66, 105, 0.85) 60%,
-            rgba(6, 126, 164, 0.8)
+            rgba(2, 100, 51, 0.8)
           ),
           url("https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=1200&q=80");
         background-size: cover;
@@ -642,21 +642,15 @@
     </header>
 
     <nav>
-      <button class="nav-btn active" onclick="openTab('inicio')">Inicio</button>
-      <button class="nav-btn" onclick="openTab('archivos')">
-        Archivo Documental
-      </button>
-      <a
-        href="AQUI_VA_TU_LINK_DE_NOTICIAS.html"
-        target="_blank"
-        style="text-decoration: none"
+      <a href="index.html" style="text-decoration: none"
+        ><button class="nav-btn active">Inicio</button></a
       >
-        <button class="nav-btn">Sala de Prensa ↗</button>
-      </a>
-      <button class="nav-btn" onclick="openTab('colecciones')">
-        Colecciones
-      </button>
-      <button class="nav-btn" onclick="openTab('contacto')">Contacto</button>
+      <a href="archivos.html" style="text-decoration: none"
+        ><button class="nav-btn">Archivo Documental</button></a
+      >
+      <a href="contacto.html" style="text-decoration: none"
+        ><button class="nav-btn">Contacto</button></a
+      >
     </nav>
 
     <div class="container">
@@ -760,7 +754,10 @@
               </p>
             </div>
 
-            <div class="side-box">
+            <div
+              class="side-box"
+              style="border-left-color: var(--magenta-lerdo)"
+            >
               <h4>📂 Acervos Disponibles</h4>
               <ul
                 style="
@@ -777,192 +774,13 @@
               </ul>
             </div>
 
-            <div
-              class="side-box"
-              style="border-left-color: var(--dorado-oficial)"
-            >
+            <div class="side-box" style="border-left-color: var(--verde-lerdo)">
               <h4>⚖️ Lineamientos de Consulta</h4>
               <p style="font-size: 0.85rem; color: #4a5568">
                 Los archivos PDF están optimizados para consulta académica y
                 ciudadana gratuita. Queda prohibida su alteración o uso
                 comercial sin autorización formal.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="archivos" class="tab-content">
-        <div class="card-panel">
-          <h2 class="section-header">Consulta Documental</h2>
-
-          <div class="filter-container">
-            <input
-              type="text"
-              id="searchInput"
-              onkeyup="filterDocs()"
-              placeholder="🔎 Buscar por título o palabra clave..."
-            />
-            <select id="yearFilter" onchange="filterDocs()">
-              <option value="">Todos los Años</option>
-              <option value="1904">1904</option>
-              <option value="1905">1905</option>
-              <option value="1910">1910</option>
-            </select>
-          </div>
-
-          <div class="document-grid" id="documentGrid">
-            <div class="doc-card" data-year="1904">
-              <div>
-                <div class="doc-header">
-                  <span class="badge-year">1904</span>
-                  <span class="badge-type">Recibo Municipal</span>
-                </div>
-                <div class="doc-body">
-                  <h4>Recibo de Tesorería #041</h4>
-                  <p>
-                    Comprobante original de ingresos municipales por derechos de
-                    agua y propiedad.
-                  </p>
-                </div>
-              </div>
-              <div class="doc-footer">
-                <a
-                  href="documentos/1904_recibo_041.pdf"
-                  target="_blank"
-                  class="btn-pdf"
-                  >📄 Abrir PDF</a
-                >
-              </div>
-            </div>
-
-            <div class="doc-card" data-year="1904" data-tipo="acta">
-              <div>
-                <div class="doc-header">
-                  <span class="badge-year">1904</span>
-                  <span class="badge-type">Acta Oficial</span>
-                </div>
-                <div class="doc-body">
-                  <h4>Acta de Cabildo Extraordinaria</h4>
-                  <p>
-                    Registro de sesión pública sobre obras de pavimentación en
-                    la zona centro.
-                  </p>
-                </div>
-              </div>
-              <div class="doc-footer">
-                <a
-                  href="documentos/1904_acta_cabildo.pdf"
-                  target="_blank"
-                  class="btn-pdf"
-                  >📄 Abrir PDF</a
-                >
-              </div>
-            </div>
-
-            <div class="doc-card" data-year="1905" data-tipo="registro">
-              <div>
-                <div class="doc-header">
-                  <span class="badge-year">1905</span>
-                  <span class="badge-type">Registro Civil</span>
-                </div>
-                <div class="doc-body">
-                  <h4>Registro Comercial de Comercios</h4>
-                  <p>
-                    Padrón de establecimientos y licencias comerciales de la
-                    época.
-                  </p>
-                </div>
-              </div>
-              <div class="doc-footer">
-                <a
-                  href="documentos/1905_padron.pdf"
-                  target="_blank"
-                  class="btn-pdf"
-                  >📄 Abrir PDF</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="colecciones" class="tab-content">
-        <div class="card-panel">
-          <h2 class="section-header">Colecciones Especiales</h2>
-          <p style="margin-bottom: 1.5rem">
-            Libros, folletos, memorias gráficas y material bibliográfico
-            especial en resguardo.
-          </p>
-
-          <div class="document-grid">
-            <div class="doc-card" data-tipo="libro">
-              <div>
-                <div class="doc-header">
-                  <span class="badge-year">Libro</span>
-                  <span class="badge-type">Historia Local</span>
-                </div>
-                <div class="doc-body">
-                  <h4>Compendio Cronológico de Lerdo</h4>
-                  <p>
-                    Edición digital con testimonios y relatos fundacionales de
-                    la ciudad.
-                  </p>
-                </div>
-              </div>
-              <div class="doc-footer">
-                <a
-                  href="colecciones/libro_cronistas.pdf"
-                  target="_blank"
-                  class="btn-pdf"
-                  >📖 Leer Libro</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contacto" class="tab-content">
-        <div class="card-panel">
-          <h2 class="section-header">Ubicación y Contacto</h2>
-
-          <div class="contact-grid">
-            <div class="contact-item">
-              <div class="contact-icon">📍</div>
-              <div>
-                <strong>Dirección</strong>
-                <p>
-                  Av. Francisco I. Madero s/n, Centro Histórico, Ciudad Lerdo,
-                  Durango.
-                </p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">📞</div>
-              <div>
-                <strong>Teléfono Directo</strong>
-                <p>(871) 725-1135 / Ext. 104</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">✉️</div>
-              <div>
-                <strong>Correo Institucional</strong>
-                <p>museografia@lerdo.gob.mx</p>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-icon">🌐</div>
-              <div>
-                <strong>Redes Oficiales</strong>
-                <p>
-                  Facebook: /ArchivoHistoricoLerdo<br />Instagram: @ArchivoLerdo
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -987,6 +805,9 @@
       <p style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7">
         Para consultas académicas o donación de acervos privados, favor de
         acudir a la sede del archivo.
+      </p>
+      <p style="font-size: 0.7rem; margin-top: 1rem; opacity: 0.4">
+        <a href="admin.html" style="color: inherit; text-decoration: none">Acceso personal del archivo</a>
       </p>
     </footer>
 
